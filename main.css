@@ -159,13 +159,123 @@ button:disabled {
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    .active-effect-container {
-        margin: 20px 10px;
-        padding: 20px;
+    body {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 2.5em;
+        margin: 20px 0;
+    }
+
+    /* Größere Start/Stop Buttons */
+    .controls button {
+        padding: 20px 40px;
+        font-size: 22px;
+        margin: 0 10px;
+        min-width: 140px;
+    }
+
+    /* Verzögerungs-Slider für Touch optimiert */
+    .delay-container {
+        margin: 25px 15px;
+        padding: 15px;
+        grid-template-columns: auto 1fr auto;  /* Behalte horizontales Layout */
+        gap: 15px;
     }
     
+    #delaySlider {
+        width: 100%;
+        height: 40px;  /* Deutlich größerer Slider */
+    }
+    
+    #delaySlider::-webkit-slider-thumb {
+        width: 45px;  /* Größerer Thumb für Touch */
+        height: 45px;
+        border-radius: 50%;
+        background: var(--neon-blue);
+        box-shadow: 0 0 10px var(--neon-blue);
+        -webkit-appearance: none;
+    }
+    
+    .delay-container label,
+    .delay-value {
+        font-size: 1.2em;
+    }
+
+    /* Aktiver Effekt Container */
+    .active-effect-container {
+        margin: 20px 10px;
+        padding: 25px 15px;
+    }
+
     .effect-name {
-        font-size: 1.5em;
+        font-size: 1.8em;
+    }
+
+    /* Effekt Slider für Touch optimiert */
+    .slider-container {
+        padding: 25px 15px;
+        margin: 10px 0;
+    }
+
+    .slider-container label {
+        font-size: 1.4em;
+        margin-bottom: 15px;
+    }
+
+    .slider-container input[type="range"] {
+        height: 30px;
+    }
+
+    .slider-container input[type="range"]::-webkit-slider-thumb {
+        width: 35px;
+        height: 35px;
+    }
+
+    .slider-value {
+        font-size: 1.4em;
+        margin-top: 15px;
+    }
+
+    /* Effekt-Buttons Grid anpassen */
+    .other-effects {
+        grid-template-columns: repeat(2, 1fr);  /* 2 Buttons pro Zeile */
+        gap: 20px;
+        padding: 25px 15px;
+        margin: 30px 10px;
+    }
+
+    .effect-button {
+        height: 80px;  /* Höhere Buttons */
+        font-size: 20px;
+        padding: 15px;
+    }
+
+    /* Evil Button extra groß */
+    .evil-button {
+        grid-column: span 2;  /* Über ganze Breite */
+        height: 90px;
+        font-size: 24px;
+    }
+}
+
+/* Zusätzliche Anpassungen für sehr kleine Bildschirme */
+@media (max-width: 380px) {
+    .controls button {
+        padding: 15px 30px;
+        font-size: 20px;
+        min-width: 120px;
+    }
+
+    .effect-button {
+        height: 70px;
+        font-size: 18px;
+    }
+
+    .evil-button {
+        height: 80px;
+        font-size: 22px;
     }
 }
 
@@ -201,20 +311,35 @@ button:disabled {
 
 /* Responsive Anpassungen */
 @media (max-width: 768px) {
+    /* ... andere mobile Styles ... */
+
+    /* Verzögerungs-Slider für Touch optimiert */
     .delay-container {
-        margin: 15px;
-        padding: 10px;
+        margin: 25px 15px;
+        padding: 15px;
+        grid-template-columns: auto 1fr auto;  /* Behalte horizontales Layout */
+        gap: 15px;
     }
     
     #delaySlider {
-        height: 15px;
+        width: 100%;
+        height: 40px;  /* Deutlich größerer Slider */
     }
     
-    .delay-container label {
-        font-size: 0.9em;
+    #delaySlider::-webkit-slider-thumb {
+        width: 45px;  /* Größerer Thumb für Touch */
+        height: 45px;
+        border-radius: 50%;
+        background: var(--neon-blue);
+        box-shadow: 0 0 10px var(--neon-blue);
+        -webkit-appearance: none;
     }
     
+    .delay-container label,
     .delay-value {
-        font-size: 0.9em;
+        font-size: 1.2em;
     }
-} 
+}
+
+/* Die zweite Media Query für den Delay Container können wir löschen, 
+   da die Styles jetzt oben integriert sind */ 
