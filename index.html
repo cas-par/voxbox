@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>VoxBox</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <h1>VoxBox</h1>
+    
+    <div class="controls">
+        <button id="startButton">Start</button>
+        <button id="stopButton" disabled>Stop</button>
+    </div>
+
+    <!-- Delay Slider direkt unter den Controls -->
+    <div class="delay-container">
+        <label for="delaySlider">Verzögerung</label>
+        <input type="range" id="delaySlider" 
+               min="0" max="7" step="0.1" value="0.6">
+        <div class="delay-value">
+            <span id="delayValue">0.6</span>s
+        </div>
+    </div>
+
+    <!-- Neuer aktiver Effekt Bereich -->
+    <div class="active-effect-container">
+        <div class="effect-name"></div>
+        <div class="effect-controls">
+            <!-- Slider werden dynamisch eingefügt -->
+        </div>
+    </div>
+
+    <!-- Effekt-Auswahl -->
+    <div class="other-effects">
+        <h3>Effekte</h3>
+        <button class="effect-button" data-effect="normal">Normal</button>
+        <button class="effect-button" data-effect="pitch">Tonhöhe</button>
+        <button class="effect-button" data-effect="echo">Echo</button>
+        <button class="effect-button" data-effect="metallic">Metallic</button>
+        <button class="effect-button" data-effect="chipmunk">Quietschig</button>
+        <button class="effect-button" data-effect="robot">Roboter</button>
+        <button class="effect-button" data-effect="deep">Sehr Tief</button>
+        <button class="effect-button evil-button" data-effect="demon">Dämon</button>
+        <button class="effect-button" data-effect="flanger">Flanger</button>
+    </div>
+
+    <!-- Scripts in korrekter Reihenfolge -->
+    <script src="effectConfigs.js" type="text/javascript"></script>
+    <script src="script.js" type="text/javascript"></script>
+</body>
+</html> 

@@ -1,0 +1,220 @@
+:root {
+    --neon-pink: #ff71ce;
+    --neon-blue: #01cdfe;
+    --neon-purple: #b967ff;
+    --neon-green: #05ffa1;
+    --dark-bg: #1a1a1a;
+    --grid-color: rgba(255, 255, 255, 0.1);
+}
+
+body {
+    font-family: 'Orbitron', sans-serif;
+    background-color: var(--dark-bg);
+    color: white;
+    max-width: 1024px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+    background-image: 
+        linear-gradient(0deg, var(--grid-color) 1px, transparent 1px),
+        linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
+    background-size: 30px 30px;
+    background-position: center center;
+}
+
+h1 {
+    color: var(--neon-pink);
+    text-shadow: 0 0 10px var(--neon-pink),
+                 0 0 20px var(--neon-pink),
+                 0 0 30px var(--neon-pink);
+    font-size: 3em;
+    margin: 30px 0;
+}
+
+.controls {
+    text-align: center;
+    margin: 20px 0;
+}
+
+button {
+    padding: 15px 30px;
+    font-size: 18px;
+    margin: 0 15px;
+    background: transparent;
+    border: 2px solid var(--neon-purple);
+    color: var(--neon-purple);
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: 'Orbitron', sans-serif;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background: var(--neon-purple);
+    color: white;
+    box-shadow: 0 0 15px var(--neon-purple);
+}
+
+button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Aktiver Effekt Container */
+.active-effect-container {
+    margin: 30px auto;
+    padding: 30px;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 15px;
+    border: 2px solid var(--neon-green);
+    box-shadow: 0 0 20px var(--neon-green);
+    max-width: 800px;
+}
+
+.effect-name {
+    font-size: 2em;
+    color: var(--neon-green);
+    text-shadow: 0 0 10px var(--neon-green);
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.effect-controls {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.slider-container {
+    background: rgba(0, 0, 0, 0.4);
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.slider-container label {
+    display: block;
+    color: var(--neon-blue);
+    margin-bottom: 10px;
+    font-size: 1.2em;
+    text-transform: uppercase;
+}
+
+.slider-container input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    outline: none;
+}
+
+.slider-container input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 25px;
+    height: 25px;
+    background: var(--neon-green);
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 0 10px var(--neon-green);
+}
+
+.slider-value {
+    display: block;
+    margin-top: 10px;
+    font-size: 1.2em;
+    color: var(--neon-green);
+    text-shadow: 0 0 5px var(--neon-green);
+}
+
+/* Anpassung der bestehenden Styles */
+.other-effects {
+    margin-top: 50px;
+    padding: 30px;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 15px;
+    border: 2px solid var(--neon-purple);
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.effect-button {
+    margin: 0;
+    width: 100%;
+    height: 60px;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .active-effect-container {
+        margin: 20px 10px;
+        padding: 20px;
+    }
+    
+    .effect-name {
+        font-size: 1.5em;
+    }
+}
+
+/* Delay Container neu gestaltet */
+.delay-container {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 15px;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 15px;
+    align-items: center;
+}
+
+.delay-container label {
+    color: #00ffff;
+    margin-bottom: 10px;
+    white-space: nowrap;
+}
+
+#delaySlider {
+    width: 100%;
+    height: 20px;
+    background: #00ffff;
+}
+
+.delay-value {
+    color: #00ffff;
+    white-space: nowrap;
+}
+
+/* Responsive Anpassungen */
+@media (max-width: 768px) {
+    .delay-container {
+        margin: 15px;
+        padding: 10px;
+    }
+    
+    #delaySlider {
+        height: 15px;
+    }
+    
+    .delay-container label {
+        font-size: 0.9em;
+    }
+    
+    .delay-value {
+        font-size: 0.9em;
+    }
+} 
